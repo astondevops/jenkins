@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  jenkins:
+    image: jenkins:alpine
+    hostname: localhost
+    environment:
+        JAVA_OPTS:  -Djava.util.logging.config.file=/var/jenkins_home/log.properties
+    ports:
+       - "8080:8080"
+       - "50000:50000"
+    #volumes:
+    #- ./data:/var/jenkins_home
